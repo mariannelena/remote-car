@@ -1,5 +1,6 @@
 radio.onReceivedNumber(function (receivedNumber) {
     Radio = receivedNumber
+    Kitronik_Move_Motor.turnRadius(Kitronik_Move_Motor.TurnRadii.Standard)
     Kitronik_Move_Motor.stop()
     if (Radio == 1) {
         basic.showLeds(`
@@ -9,7 +10,7 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . . # .
             . . # . .
             `)
-        Kitronik_Move_Motor.spin(Kitronik_Move_Motor.SpinDirections.Left, 5)
+        Kitronik_Move_Motor.motorOn(Kitronik_Move_Motor.Motors.MotorLeft, Kitronik_Move_Motor.MotorDirection.Forward, 30)
         basic.pause(500)
     } else if (Radio == 2) {
         basic.showLeds(`
@@ -19,7 +20,7 @@ radio.onReceivedNumber(function (receivedNumber) {
             . # . . .
             . . # . .
             `)
-        Kitronik_Move_Motor.spin(Kitronik_Move_Motor.SpinDirections.Right, 5)
+        Kitronik_Move_Motor.motorOn(Kitronik_Move_Motor.Motors.MotorRight, Kitronik_Move_Motor.MotorDirection.Forward, 30)
         basic.pause(500)
     } else if (Radio == 3) {
         basic.showLeds(`
