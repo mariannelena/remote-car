@@ -1,5 +1,5 @@
 {
-    "name": "remote car",
+    "name": "remote car w lights",
     "description": "",
     "dependencies": {
         "core": "*",
